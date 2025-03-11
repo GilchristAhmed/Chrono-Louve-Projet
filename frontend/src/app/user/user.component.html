@@ -1,23 +1,13 @@
 <div class="users">
-  <div class="photo">
-    <img src="{{ user.PhotoUrl }}" alt="{{user.Nom}}">
-  </div>
   <div class="nom">
     <h2>{{ user.Nom }}</h2>
     <p>{{ user.Prenom }}</p>
   </div>
 
   <div class="infos">
-    <p>{{ user.Email }}</p>
-    <p>{{ user.Telephone }}</p>
-    <p>{{ user.Adresse }}</p>
-    <p>{{ user.CodePostal }}</p>
-    <p>{{ user.Ville }}</p>
-    <p>{{ user.Pays }}</p>
     <p>{{ user.Role }}</p>
     <p>{{ user.CreateAt }}</p>
   </div>
 
-
-
+    <button (click)="onViewUser()">Visualier</button>
 </div>

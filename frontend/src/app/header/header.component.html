@@ -1,7 +1,13 @@
+<header>
 <div class="header">
+  <div class="logo">
+    <a routerLink="">Chrono Louve</a>
+  </div>
+
   <nav>
-    <a routerLink="users">Chrono Louve</a>
+    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact:true }">Accueil</a>
+    <a routerLink="users" routerLinkActive="active" >Login</a>
   </nav>
 </div>
 
-
+</header>

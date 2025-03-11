@@ -45,11 +45,12 @@ export class UsersService {
     this.user = user;
   }
 
- UserById(UserId: String):void{
+  FindUserById(UserId: string | null):user{
     const foundUserbyId = this.user.find(user => user.UserId === UserId);
     if (!foundUserbyId) {
       throw new Error('Utilisateur introuvable');
     }
+    return foundUserbyId;
   }
 
 }
