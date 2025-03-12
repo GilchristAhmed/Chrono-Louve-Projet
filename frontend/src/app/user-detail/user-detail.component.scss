@@ -1,6 +1,8 @@
 .users {
-  width: 15%;
-  height: 15%;
+  width: 80%;
+  align-items: center;
+  justify-items: center;
+  justify-content: center ;
   margin: 1rem;
   border: 1px groove;
   mso-border-shadow: yes;
@@ -9,7 +11,7 @@
   border-radius: 2rem;
   float: left;
     img {
-      max-width: 2rem;
+      max-width:2rem;
       max-height: 2rem;
     }
 
