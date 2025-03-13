@@ -1,17 +1,25 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-login',
-  standalone: true,
+  standalone: false,
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
+userName!: string;
+password!: string;
 
   constructor(private router: Router) { }
 
-  OnLogin() {
-    this.router.navigateByUrl('users');
+  onLogin(form: NgForm) {
+
+    console.log(form.value);
+
+  }
+
+  ngOnInit(): void {
   }
 }

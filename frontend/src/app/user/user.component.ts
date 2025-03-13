@@ -5,8 +5,7 @@ import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-user',
-  imports: [],
-  standalone: true,
+  standalone: false,
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss'
 })

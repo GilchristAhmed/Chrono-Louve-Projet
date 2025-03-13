@@ -5,8 +5,7 @@ import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-user-detail',
-  imports: [],
-  standalone: true,
+  standalone: false,
   templateUrl: './user-detail.component.html',
   styleUrl: './user-detail.component.scss'
 })

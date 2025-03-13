@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import {UserListComponent} from './user-list/user-list.component';
-import {HeaderComponent} from './header/header.component';
+import {RouterOutlet} from "@angular/router";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent],
   templateUrl: './app.component.html',
+  standalone: false,
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'frontend';
+  title = 'Chrono Louve';
 }

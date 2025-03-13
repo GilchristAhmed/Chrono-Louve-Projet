@@ -5,11 +5,8 @@ import {UsersService} from '../services/users.service';
 
 @Component({
   selector: 'app-user-list',
-  standalone: true,
+  standalone: false,
   templateUrl: './user-list.component.html',
-  imports: [
-    UserComponent
-  ],
   styleUrl: './user-list.component.scss'
 })
 export class UserListComponent implements OnInit{
