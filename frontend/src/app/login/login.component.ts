@@ -8,18 +8,15 @@ import {NgForm} from "@angular/forms";
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent {
 userName!: string;
 password!: string;
 
   constructor(private router: Router) { }
 
   onLogin(form: NgForm) {
-
     console.log(form.value);
-
+    this.router.navigateByUrl('users');
   }
 
-  ngOnInit(): void {
-  }
 }

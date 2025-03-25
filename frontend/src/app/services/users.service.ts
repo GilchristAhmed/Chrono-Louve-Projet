@@ -1,10 +1,14 @@
 import {Injectable} from '@angular/core';
 import {user} from '../models/user';
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
+  constructor(private  http: HttpClient) {
+  }
 
   private user: user[] = [
     new user(
@@ -38,6 +42,9 @@ export class UsersService {
       "https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg"
     )];
 
+  getUsers(): Observable<user[]> {
+    return this.http.get<user[]>('http://localhost:3000/users');
+  }
   getUser() {
     return [...this.user];
   }
@@ -52,5 +59,6 @@ export class UsersService {
     }
     return foundUserbyId;
   }
+
 
 }

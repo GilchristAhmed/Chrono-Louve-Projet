@@ -3,10 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import {UserDetailComponent} from './user-detail/user-detail.component';
 import {UserListComponent} from './user-list/user-list.component';
 import {LoginComponent} from './login/login.component';
+import {RegisterComponent} from './register/register.component';
+import {LandingpageComponent} from './landingpage/landingpage.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: LandingpageComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'users', component: UserListComponent },
   { path: 'users/:UserId', component: UserDetailComponent }
 ];
