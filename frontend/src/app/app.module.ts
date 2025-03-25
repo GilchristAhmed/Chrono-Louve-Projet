@@ -8,8 +8,10 @@ import {HeaderComponent} from './header/header.component';
 import {LoginComponent} from './login/login.component';
 import {UserComponent} from './user/user.component';
 import {UserDetailComponent} from './user-detail/user-detail.component';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterOutlet} from "@angular/router";
+import { RegisterComponent } from './register/register.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,16 @@ import {RouterOutlet} from "@angular/router";
     UserComponent,// Déclarez UserListComponent
     HeaderComponent,
     LoginComponent,
-    AppComponent
+    AppComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterOutlet,
     FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
