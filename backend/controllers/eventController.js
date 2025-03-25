@@ -1,5 +1,5 @@
 // src/controllers/eventController.js
-const Event = require('../models/');
+const Event = require('../models/event.js');
 
 // Exemple de fonction pour obtenir un événement
 function getEvent(req, res) {
