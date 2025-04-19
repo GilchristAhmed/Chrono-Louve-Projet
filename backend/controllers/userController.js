@@ -8,18 +8,25 @@ const jwt = require('jsonwebtoken');
 
 
 const signup = async (req, res) => {
- const { email, password, fname, lname, roleUser } = req.body;
+ const { email, password, fName, lName, roleUser } = req.body;
  const hashedPassword = await bcrypt.hash(password, 10);
 
  const userData = {
   userId: uuidv4(),
   email,
-  password: hashedPassword
+  password: hashedPassword,
+  fName,
+  lName,
+  roleUser
  };
 
  User.create(userData, (err) => {
-  if (err) return res.status(500).json({ error: err.message });
+  if (err) {
+   console.error("Erreur lors de la création de l'utilisateur:", err);
+   return res.status(500).json({ error: err.message });
+  }
   res.status(201).json({ message: 'Utilisateur créé avec succès' });
+  
  });
 
 };

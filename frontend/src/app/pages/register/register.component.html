@@ -1,0 +1,22 @@
+<form [formGroup]="userForm">
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input id="email" type="text" formControlName="email">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input id="password" type="password" formControlName="password">
+  </div>
+ <div class="form-group">
+    <label for="fName">Prenom</label>
+    <input id="fName" type="text" formControlName="fName">
+  </div>
+  <div class="form-group">
+    <label for="lName">Nom</label>
+    <input id="lName" type="text" formControlName="lName">
+  </div>
+  <div class="action-buttons">
+    <button type="submit" (click)="onRegisterForm()">Creer le compte</button>
+  </div>
+</form>
+

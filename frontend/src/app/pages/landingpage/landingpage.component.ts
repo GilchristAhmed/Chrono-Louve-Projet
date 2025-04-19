@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landingpage',
-  standalone: false,
   templateUrl: './landingpage.component.html',
   styleUrl: './landingpage.component.scss'
 })

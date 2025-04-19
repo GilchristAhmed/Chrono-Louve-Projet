@@ -1,21 +1,20 @@
 import {Component, OnInit} from '@angular/core';
-import {user} from '../models/user';
+import {User} from '../../shared/models/user';
 
-import {UsersService} from '../services/users.service';
+import {UsersService} from '../../core/services/users.service';
 import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-user-list',
-  standalone: false,
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.scss'
 })
 export class UserListComponent implements OnInit{
-  Users! : user[];
-  Users$!: Observable<user[]>;
+  users! : User[];
+  users$!: Observable<User[]>;
   constructor(private UsersService: UsersService) { }
   ngOnInit(): void {
-    this.Users= this.UsersService.getUser();
+    this.users= this.UsersService.getUser();
   }
 
 }
