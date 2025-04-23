@@ -1,0 +1,27 @@
+<form [formGroup]="commentForm" (ngSubmit)="submit()">
+    <!-- Champ Nom -->
+    <label for="name">Nom :</label>
+    <input id="name" type="text" formControlName="name" />
+    <div *ngIf="submitted && commentForm.get('name')?.invalid" class="error">
+      Le nom est requis.
+    </div>
+  
+    <!-- Champ Email -->
+    <label for="email">Email :</label>
+    <input id="email" type="email" formControlName="email" />
+    <div *ngIf="submitted && commentForm.get('email')?.invalid" class="error">
+      <span *ngIf="commentForm.get('email')?.errors?.['required']">L'email est requis.</span>
+      <span *ngIf="commentForm.get('email')?.errors?.['email']">Format d'email invalide.</span>
+    </div>
+  
+    <!-- Champ Message -->
+    <label for="message">Commentaire :</label>
+    <textarea id="message" rows="4" formControlName="message"></textarea>
+    <div *ngIf="submitted && commentForm.get('message')?.invalid" class="error">
+      <span *ngIf="commentForm.get('message')?.errors?.['required']">Le commentaire est requis.</span>
+      <span *ngIf="commentForm.get('message')?.errors?.['minlength']">Au moins 5 caractères.</span>
+    </div>
+  
+    <button type="submit">Envoyer</button>
+  </form>
+  
