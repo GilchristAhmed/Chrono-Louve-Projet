@@ -4,10 +4,10 @@ import { CommentformComponent } from "./pages/commentform/commentform.component"
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommentformComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'frontend';
+  title = 'Louves';
 }

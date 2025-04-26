@@ -3,12 +3,14 @@ import {Router} from '@angular/router';
 import {FormBuilder, FormGroup, NgForm, ReactiveFormsModule} from "@angular/forms";
 import {AuthService} from '../../core/services/auth.service';
 import {User} from '../../shared/models/user';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgIf
   ],
   styleUrl: './login.component.scss'
 })
