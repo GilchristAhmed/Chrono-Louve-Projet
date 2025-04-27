@@ -3,12 +3,17 @@
   <div class="logo">
     <a routerLink="">Chrono Louve</a>
   </div>
-
   <nav>
+  @if (isLoggedIn){
+    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact:true }">Accueil</a>
+    <a routerLink="users" routerLinkActive="active" >UserModel</a>
+  } @else {
     <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact:true }">Accueil</a>
     <a routerLink="login" routerLinkActive="active" >Login</a>
-      <a routerLink="users" routerLinkActive="active" >UserModel</a>
-      <a routerLink="register" routerLinkActive="active" >Register</a>
+    <a routerLink="register" routerLinkActive="active" >Register</a>
+  }
+
+
   </nav>
 </div>
 

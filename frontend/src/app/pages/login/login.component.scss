@@ -1,0 +1,113 @@
+.form-card {
+  box-sizing: border-box;
+  width: 90%;
+  max-width: 350px; // Réduction de la largeur maximale
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.8em;
+    color: #333;
+  }
+
+  p {
+    margin-bottom: 25px;
+    font-size: 0.9em;
+    color: #777;
+  }
+
+  .separator {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    color: #aaa;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+    position: relative;
+    text-align: left; // Alignement du label à gauche
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.85em;
+    color: #555;
+  }
+
+  input[type="email"],
+  input[type="password"],
+  input[type="text"] { // Ajout du style pour les inputs de texte (Prénom, Nom)
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 5px rgba(167, 139, 250, 0.3);
+    }
+  }
+
+  .input-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #aaa;
+    cursor: pointer;
+  }
+
+  .action-buttons {
+    margin-top: 25px;
+  }
+
+  button[type="submit"] {
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: var(--secondary-color);
+      color: black;
+      border: 1px solid var(--primary-color);
+    }
+  }
+
+  .login-link {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #777;
+
+    a {
+      color: #a78bfa;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -26,7 +26,7 @@ const signup = async (req, res) => {
    return res.status(500).json({ error: err.message });
   }
   res.status(201).json({ message: 'Utilisateur créé avec succès' });
-  
+
  });
 
 };

@@ -1,18 +1,21 @@
-<div class="login-container">
+<div class="form-card">
   <h2>Connexion</h2>
+
   <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
-    <label for="email">username</label>
-    <input type="email" name="email" id="email" placeholder="Entrez votre email" formControlName="email">
-    <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error">
-      Email invalide.
+    <div class="form-group">
+      <label for="email">username</label>
+      <input type="email" name="email" id="email" placeholder="Entrez votre email" formControlName="email">
+      <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error">
+         Email invalide.
+      </div>
     </div>
-
-    <label for="password">Mot de passe</label>
-    <input type="password" name="password" id="password" formControlName="password" placeholder="Entrez votre Mot de passe">
-    <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error">
-      Le mot de passe doit contenir au moins 12 caractères.
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input type="password" name="password" id="password" formControlName="password" placeholder="Entrez votre Mot de passe">
+      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error">
+        Le mot de passe doit contenir au moins 12 caractères.
+      </div>
     </div>
-
     <button type="submit" [disabled]="loginForm.invalid"> Se connecter</button>
 
 

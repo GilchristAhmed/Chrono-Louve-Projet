@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit{
       email: "",
       password: "",
       fName: "",
-      lName: "null"
+      lName: ""
       //photoUrl: null,
       //tel: null,
 
