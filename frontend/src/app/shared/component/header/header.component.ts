@@ -1,40 +1,50 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import {Router, RouterLink, RouterLinkActive} from '@angular/router';
+import { Subscription } from 'rxjs';
 import {AuthService} from '../../../core/services/auth.service';
-
+import {User} from '../../models/user'; // Importez votre modèle User
 
 @Component({
   selector: 'app-header',
-  imports: [
-    RouterLinkActive,
-    RouterLink
-  ],
+  standalone: true,
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
+  isLoggedIn: boolean = false;
+  isAdmin: boolean = false;
+  private authSubscription?: Subscription;
 
-  isLoggedIn: boolean = true;
+  constructor(private authService: AuthService, private router: Router) {}
 
-  constructor(private http: HttpClient, private router: Router, private authService: AuthService ) {
+  ngOnInit(): void {
+    this.authSubscription = this.authService.isLoggedIn$.subscribe((loggedIn) => {
+      this.isLoggedIn = loggedIn;
+      this.checkAdminStatus();
+    });
+
+    this.checkAdminStatus();
   }
 
-  ngOnInit() {
-    this.State();
-  }
-  logout(): void {
-
-  }
-
-  State(){
-    if(this.authService.isLoggedIn()){
-      this.isLoggedIn = true;
-    }else {
-      this.isLoggedIn = false;
+  ngOnDestroy(): void {
+    if (this.authSubscription) {
+      this.authSubscription.unsubscribe();
     }
-
   }
 
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/']);
+  }
 
+  private checkAdminStatus(): void {
+    if (this.isLoggedIn) {
+      const user: User | null = this.authService.getCurrentUser(); // Utilisez le type User
+
+      this.isAdmin = !!(user && user.roleUser === 'admin');
+    } else {
+      this.isAdmin = false;
+    }
+  }
 }

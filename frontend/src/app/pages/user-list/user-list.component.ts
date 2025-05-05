@@ -9,12 +9,7 @@ import {Observable} from "rxjs";
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.scss'
 })
-export class UserListComponent implements OnInit{
-  users! : User[];
-  users$!: Observable<User[]>;
-  constructor(private UsersService: UsersService) { }
-  ngOnInit(): void {
-    this.users= this.UsersService.getUser();
-  }
+export class UserListComponent {
+
 
 }

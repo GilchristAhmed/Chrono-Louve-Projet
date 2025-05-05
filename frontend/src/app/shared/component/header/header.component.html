@@ -1,20 +1,21 @@
 <header>
-<div class="header">
-  <div class="logo">
-    <a routerLink="">Chrono Louve</a>
+  <div class="header">
+    <div class="logo">
+      <a routerLink="">Chrono Louve</a>
+    </div>
+    <nav>
+      @if (isLoggedIn && isAdmin){
+        <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact:true }">Accueil</a>
+        <a routerLink="users" routerLinkActive="active" >UserModel</a>
+        <button (click)="logout()">Déconnexion</button>
+      } @else if (isLoggedIn && !isAdmin) {
+        <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact:true }">Accueil</a>
+        <button (click)="logout()">Déconnexion</button>
+      } @else {
+        <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact:true }">Accueil</a>
+        <a routerLink="login" routerLinkActive="active" >Login</a>
+        <a routerLink="register" routerLinkActive="active" >Register</a>
+      }
+    </nav>
   </div>
-  <nav>
-  @if (isLoggedIn){
-    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact:true }">Accueil</a>
-    <a routerLink="users" routerLinkActive="active" >UserModel</a>
-  } @else {
-    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact:true }">Accueil</a>
-    <a routerLink="login" routerLinkActive="active" >Login</a>
-    <a routerLink="register" routerLinkActive="active" >Register</a>
-  }
-
-
-  </nav>
-</div>
-
 </header>

@@ -4,8 +4,8 @@ const db = require('../utils/database');
 
 const User = {
     create: (userData, callback) => {
-        const query = 'INSERT INTO users (userId, email, password, fname, lname, roleUser) VALUES (?, ?, ?, ?, ?, ?)';
-        db.query(query, [userData.userId,userData.email, userData.password, userData.fname, userData.lname, userData.roleUser], (err, results) => {
+        const query = 'INSERT INTO users (userId, email, password, fName, lName, roleUser) VALUES (?, ?, ?, ?, ?, ?)';
+        db.query(query, [userData.userId,userData.email, userData.password, userData.fName, userData.lName, userData.roleUser], (err, results) => {
             if (err) return callback(err);
             callback(null, results.insertId);
 

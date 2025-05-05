@@ -53,7 +53,7 @@ const createTables = () => {
 
   const createUsersTable = `
     CREATE TABLE IF NOT EXISTS users (
-      userId VARCHAR(255) PRIMARY KEY,
+      userId INT AUTO_INCREMENT PRIMARY KEY,
       email VARCHAR(255),
       password  VARCHAR(255),
       fName VARCHAR(255),
