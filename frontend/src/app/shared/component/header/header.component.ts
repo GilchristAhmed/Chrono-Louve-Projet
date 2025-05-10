@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import {Router, RouterLink, RouterLinkActive} from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { Subscription } from 'rxjs';
-import {AuthService} from '../../../core/services/auth.service';
-import {User} from '../../models/user'; // Importez votre modèle User
+import { AuthService } from '../../../core/services/auth.service';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-header',
@@ -19,12 +19,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
+    // Souscrivez à isLoggedIn$ pour réagir aux changements de connexion.
     this.authSubscription = this.authService.isLoggedIn$.subscribe((loggedIn) => {
       this.isLoggedIn = loggedIn;
-      this.checkAdminStatus();
+      this.checkAdminStatus(); // Appelée à chaque changement de connexion
     });
 
-    this.checkAdminStatus();
+    this.checkAdminStatus(); // Appelée une fois à l'initialisation du composant
   }
 
   ngOnDestroy(): void {
@@ -39,12 +40,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   private checkAdminStatus(): void {
-    if (this.isLoggedIn) {
-      const user: User | null = this.authService.getCurrentUser(); // Utilisez le type User
+    // Obtient l'utilisateur *actuel* depuis le service.
+    const user: User | null = this.authService.getCurrentUser();
 
-      this.isAdmin = !!(user && user.roleUser === 'admin');
-    } else {
-      this.isAdmin = false;
-    }
+    // Vérifie si un utilisateur est connecté et si son rôle est 'admin'.
+    this.isAdmin = this.isLoggedIn && user !== null && user.roleUser === 'admin';
   }
 }

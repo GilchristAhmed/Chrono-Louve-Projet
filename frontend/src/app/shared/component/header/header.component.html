@@ -6,11 +6,14 @@
     <nav>
       @if (isLoggedIn && isAdmin){
         <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact:true }">Accueil</a>
-        <a routerLink="users" routerLinkActive="active" >UserModel</a>
+        <a routerLink="user" routerLinkActive="active" >UserModel</a>
         <button (click)="logout()">Déconnexion</button>
+
+        <a>Bienvenue Admin</a>
       } @else if (isLoggedIn && !isAdmin) {
         <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact:true }">Accueil</a>
         <button (click)="logout()">Déconnexion</button>
+        <a>Bienvenue User</a>
       } @else {
         <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact:true }">Accueil</a>
         <a routerLink="login" routerLinkActive="active" >Login</a>
