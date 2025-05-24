@@ -3,8 +3,9 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-
-const routes = require('./routes');
+//const eventRoutes = require('./routes/eventRoutes');
+const figureRoutes = require('./routes/figureRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 const app = express();
 dotenv.config();
@@ -13,7 +14,8 @@ const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 //app.use('/api/event', eventRoutes);
-app.use('/', routes);
+app.use('/api/figure', figureRoutes);
+app.use('/user', userRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
