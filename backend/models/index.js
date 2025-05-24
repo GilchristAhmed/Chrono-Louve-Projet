@@ -1,6 +1,6 @@
 const User = require('./user');
 const Event = require('./events');
-const Comment = require('./comment');
+//const Comment = require('./comment');
 const Favorite = require('./favorite');
 const Media = require('./media');
 const Period = require('./period');
@@ -14,6 +14,6 @@ module.exports = {
     Period,
     Event,
     Media,
-    Comment,
+    //Comment,
     Favorite,
 };

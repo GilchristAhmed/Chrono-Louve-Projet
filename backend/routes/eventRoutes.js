@@ -14,7 +14,7 @@ router.post('/:id/favorite', controller.addFavorite);
 router.delete('/:id/favorite', controller.removeFavorite);
 // Obtenir les événements favoris
 router.get('/favorite', controller.getFavorites);
-router.get('/:id/comments', controller.getAllComments);
+//router.get('/:id/comments', controller.getAllComments);
 
 router.get('/:id/media', controller.getMediasByEvent);
 
