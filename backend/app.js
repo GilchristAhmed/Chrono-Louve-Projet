@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json());
 //app.use('/api/event', eventRoutes);
 app.use('/api/figure', figureRoutes);
-app.use('/auth', userRoutes);
+app.use('/user', userRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
